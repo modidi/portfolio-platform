@@ -34,6 +34,7 @@ function App() {
 
     const [searchTerm, setSearchTerm] = useState("");
     const [sucessMessage, setSuccessMessage] = useState("");
+    const [selectedImage, setSelectedImage] = useState(null);
 
     const addProject = (newProject) => {
         setProjects((prevProjects) => [
@@ -56,6 +57,19 @@ function App() {
         <Header />
 
         <div className="content">
+            {selectedImage && (
+                <div
+                className="image-modal"
+                onClick={() => setSelectedImage(null)}
+                >
+                    <img src={selectedImage}
+                    alt="Selected Project"
+                    className="modal-image"
+                    onClick={(event) => event.stopPropagation()} 
+                    />
+                    </div>
+            )}
+            
           <ProjectForm addProject={addProject} />
 
           {sucessMessage && (
@@ -71,7 +85,8 @@ function App() {
 
             <ProjectList 
             projects={projects} 
-            searchTerm={searchTerm} />
+            searchTerm={searchTerm}
+            setSelectedImage={selectedImage} />
 
           </div>
 

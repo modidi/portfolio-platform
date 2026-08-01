@@ -1,6 +1,6 @@
 import ProjectCard from "./ProjectCard";
 
-function ProjectList({ projects, searchTerm }) {
+function ProjectList({ projects, searchTerm, setSelectedImage }) {
     const filteredProjects = projects.filter((project) =>
     project.title.toLowerCase().includes(searchTerm.toLowerCase())
     );
@@ -24,6 +24,7 @@ function ProjectList({ projects, searchTerm }) {
                     <ProjectCard
                     key={project.id}
                     project={project}
+                    setSelectedImage={setSelectedImage}
                     />
                 ))}
             </div>
