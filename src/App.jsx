@@ -28,12 +28,30 @@ function App() {
       },
     ]);
 
+    const [searchTerm, setSearchTerm] = useState("");
+
+    const addProject = (newProject) => {
+        setProjects([
+            ...projects,
+            {
+                ...newProject,
+                id: projects.length + 1,
+            },
+        ]);
+    };
+
     return (
         <>
         <Header />
-        <ProjectForm />
-        <SearchBar />
-        <ProjectList projects={projects}/>
+        <ProjectForm addProject={addProject} />
+        <SearchBar 
+        searchTerm={searchTerm}
+        setSearchTerm={setSearchTerm}
+         />
+        <ProjectList 
+        projects={projects}
+        searchTerm={searchTerm}
+        />
         </>
     );
 }
