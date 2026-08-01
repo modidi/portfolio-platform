@@ -1,6 +1,7 @@
 function SearchBar({searchTerm, setSearchTerm}) {
     return (
       <section>
+
         <div className="search-bar">
           <input
             type="text"

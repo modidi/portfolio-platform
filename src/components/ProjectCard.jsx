@@ -1,12 +1,14 @@
-function ProjectCard({project}) {
+function ProjectCard({ project }) {
     return (
-        <div className="project-card">
-            <img src={project.image} alt={project.title}/>
+      <article className="project-card">
+        <img
+          src={project.image || "https://via.placeholder.com/300"}
+          alt={project.title}
+        />
 
-            <h3>{project.title}</h3>
-            <p>{project.description}</p>
-           
-        </div>
+        <h3>{project.title}</h3>
+        <p>{project.description}</p>
+      </article>
     );
 }
 
