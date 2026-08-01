@@ -1,10 +1,15 @@
+import placeholder from "../assets/placeholder.jpg";
+
 function ProjectCard({ project, setSelectedImage }) {
     return (
       <article className="project-card">
         <img
           src={project.image || "https://via.placeholder.com/300"}
           alt={project.title}
-          onClick={() => setSelectedImage(project.image)}
+          onClick={() => setSelectedImage(project.image || placeholder)}
+          onError={(event) => {
+            event.target.src = placeholder;
+          }}
         />
 
         <div className="project-info">

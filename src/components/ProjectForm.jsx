@@ -35,14 +35,14 @@ function ProjectForm({addProject}) {
               type="text"
               value={title}
               onChange={(event) => setTitle(event.target.value)}
-              placeholder="Project Title"
+              placeholder="Project title"
               required
             />
             
             <label htmlFor="description">Description</label>
             <textarea
               id="description"
-              placeholder="Project Description"
+              placeholder="Project description"
               value={description}
               onChange={(event) => setDescription(event.target.value)}
               required
@@ -52,7 +52,7 @@ function ProjectForm({addProject}) {
             <input
               id="image"
               type="url"
-              placeholder="Image URL"
+              placeholder="Image URL (optional)"
               value={image}
               onChange={(event) => setImage(event.target.value)}
             />
