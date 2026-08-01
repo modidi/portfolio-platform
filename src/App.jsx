@@ -33,6 +33,7 @@ function App() {
     ]);
 
     const [searchTerm, setSearchTerm] = useState("");
+    const [sucessMessage, setSuccessMessage] = useState("");
 
     const addProject = (newProject) => {
         setProjects((prevProjects) => [
@@ -42,6 +43,12 @@ function App() {
                 id: prevProjects.length + 1,
             },
         ]);
+
+        setSuccessMessage(" ✅Project added successfully!");
+
+        setTimeout(() => {
+            setSuccessMessage("");
+        }, 3000);
     };
 
     return (
@@ -51,10 +58,20 @@ function App() {
         <div className="content">
           <ProjectForm addProject={addProject} />
 
-          <div className="projects-container">
-            <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+          {sucessMessage && (
+            <p className="sucess-message">
+                {sucessMessage}
+            </p>
+          )}
 
-            <ProjectList projects={projects} searchTerm={searchTerm} />
+          <div className="projects-container">
+            <SearchBar 
+            searchTerm={searchTerm} 
+            setSearchTerm={setSearchTerm} />
+
+            <ProjectList 
+            projects={projects} 
+            searchTerm={searchTerm} />
 
           </div>
 

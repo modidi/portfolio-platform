@@ -9,7 +9,7 @@ function ProjectList({ projects, searchTerm }) {
         return (
           <section>
             <h2>Projects</h2>
-            <p>No Projects Found</p>
+            <p>No Projects match your search</p>
           </section>
         );
     }
