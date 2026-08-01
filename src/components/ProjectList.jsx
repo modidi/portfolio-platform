@@ -15,7 +15,7 @@ function ProjectList({ projects, searchTerm }) {
     }
 
     return (
-        <section>
+        <section className="project-section">
             <h2>Projects</h2>
 
             <div className="project-list">

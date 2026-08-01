@@ -4,6 +4,9 @@ import Header from "./components/Header";
 import ProjectForm from "./components/ProjectForm";
 import SearchBar from "./components/SearchBar";
 import ProjectList from "./components/ProjectList";
+import ecommerce from "./assets/ecommerce.jpg";
+import task from "./assets/task.jpg";
+import recipeFinder from "./assets/recipe.jpg";
 
 function App() {
     const [projects, setProjects] = useState([
@@ -11,21 +14,21 @@ function App() {
         id: 1,
         title: "E-Commerce Store",
         description: "An online shopping platform built with React.",
-        image: "https://via.placeholder.com/300",
+        image: ecommerce,
       },
 
       {
         id: 2,
         title: "Task Manager",
         description: "A productivity app for organizing daily tasks.",
-        image: "https://via.placeholder.com/300",
+        image: task,
       },
 
       {
         id: 3,
         title: "Recipe Finder",
         description: "A web application for searching recipes by ingredient or meal name.",
-        image: "https://via.placeholder.com/300",
+        image: recipeFinder,
       },
     ]);
 
@@ -56,7 +59,7 @@ function App() {
           </div>
 
         </div>
-        
+
       </div>
     );
 }

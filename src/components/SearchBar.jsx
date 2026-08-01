@@ -3,9 +3,10 @@ function SearchBar({searchTerm, setSearchTerm}) {
       <section>
 
         <div className="search-bar">
+            <label htmlFor="search">Search Projects</label>
           <input
             type="text"
-            placeholder="Search projects..."
+            placeholder="Search for projects..."
             value={searchTerm}
             onChange={(event) => setSearchTerm(event.target.value)}
           />
