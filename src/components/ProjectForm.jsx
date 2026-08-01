@@ -28,6 +28,8 @@ function ProjectForm({addProject}) {
           <h2>Add a New Project</h2>
 
           <div className="project-form-fields">
+
+            <label>Title</label>
             <input
               type="text"
               value={title}
@@ -35,7 +37,8 @@ function ProjectForm({addProject}) {
               placeholder="Project Title"
               required
             />
-
+            
+            <label>Description</label>
             <textarea
               placeholder="Project Description"
               value={description}
@@ -43,6 +46,7 @@ function ProjectForm({addProject}) {
               required
             />
 
+            <label>Image</label>
             <input
               type="url"
               placeholder="Image URL"

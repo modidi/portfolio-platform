@@ -6,8 +6,11 @@ function ProjectCard({ project }) {
           alt={project.title}
         />
 
-        <h3>{project.title}</h3>
-        <p>{project.description}</p>
+        <div className="project-info">
+          <h3>{project.title}</h3>
+          <p>{project.description}</p>
+        </div>
+        
       </article>
     );
 }
