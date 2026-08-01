@@ -1,7 +1,11 @@
-function ProjectCard() {
+function ProjectCard({project}) {
     return (
-        <div>
-            <h3>Project Card</h3>
+        <div className="project-card">
+            <img src={project.image} alt={project.title}/>
+
+            <h3>{project.title}</h3>
+            <p>{project.description}</p>
+           
         </div>
     );
 }
