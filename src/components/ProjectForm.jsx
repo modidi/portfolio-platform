@@ -29,8 +29,9 @@ function ProjectForm({addProject}) {
 
           <div className="project-form-fields">
 
-            <label>Title</label>
+            <label htmlFor="title">Title</label>
             <input
+              id="title"
               type="text"
               value={title}
               onChange={(event) => setTitle(event.target.value)}
@@ -38,16 +39,18 @@ function ProjectForm({addProject}) {
               required
             />
             
-            <label>Description</label>
+            <label htmlFor="description">Description</label>
             <textarea
+              id="description"
               placeholder="Project Description"
               value={description}
               onChange={(event) => setDescription(event.target.value)}
               required
             />
 
-            <label>Image</label>
+            <label htmlFor="image">Image</label>
             <input
+              id="image"
               type="url"
               placeholder="Image URL"
               value={image}

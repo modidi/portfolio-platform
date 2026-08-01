@@ -1,20 +1,21 @@
-.app {
-  min-height: 100vh;
-  padding: 40px;
-  background: #f8fafc;
+body {
+  margin: 0;
+  background: #f4f6fb;
+  font-family: Arial, Helvetica, sans-serif;
   color: #1e293b;
+}
+.app {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 25px;
 }
 
 .header {
   text-align: center;
-  padding: 24px 0 8px;
-  border-bottom: 2px solid black;
+  margin-bottom: 35px;
+  padding: 40px 0 30px;
 }
 
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-}
 
 .header h1 {
   font-size: 3rem;
@@ -29,19 +30,24 @@
   line-height: 1.6;
 }
 
-.search-bar {
+.content {
   display: flex;
-  justify-content: center;
-  margin-bottom: 35px;
+  flex-direction: column;
+  gap: 45px;
+}
+
+.search-bar {
+  padding: 25px;
+  border-bottom: 1px solid #ececec;
 }
 
 .search-bar input {
-  width: 100%;
-  max-width: 450px;
+  width: 800px;
   padding: 14px 18px;
   border: 1px solid #cbd5e1;
   border-radius: 10px;
   font-size: 1rem;
+  color: black;
   outline: none;
   background: white;
   transition: 0.3s ease;
@@ -52,14 +58,19 @@
   box-shadow: 0 0 0 3px rgba(170, 59, 255, 0.15);
 }
 
+.search-bar input::placeholder {
+  color: #94a3b8;
+}
+
 .project-form {
-  max-width: 550px;
-  margin: 0 auto 50px;
-  padding: 30px;
+  width: 100%;
+  margin-bottom: 40px;
   background: white;
-  border: 2px solid black;
-  border-radius: 16px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  border: 2px solid #1e293b;
+  border-radius: 20px;
+  padding: 40px;
+  box-sizing: border-box;
+
 }
 
 .project-form h2 {
@@ -71,21 +82,33 @@
 .project-form-fields {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 20px;
+}
+
+.project-form label {
+  text-align: left;
+  font-weight: 600;
+  font-size: 18px;
 }
 
 .project-form input, .project-form textarea {
   width: 100%;
-  padding: 14px;
-  border: 1px solid #cbd5e1;
+  padding: 15px;
+  border: 1px solid #bfc8d6;
+  background: white;
+  color: #1e293b;
   font-size: 1rem;
   box-sizing: border-box;
   outline: none;
 }
 
 .project-form textarea {
-  min-height: 120px;
-  resize: vertical;
+  height: 150px;
+  resize: none;
+}
+
+.project-form input::placeholder, .project-form textarea::placeholder {
+  color: #94a3b8;
 }
 
 .project-form input:focus, .project-form textarea:focus {
@@ -112,6 +135,15 @@
   transform: translateY(-2px);
 }
 
+.projects-container {
+  width: 100%;
+  margin-bottom: 30px;
+  background: white;
+  border: 2px solid #1e293b;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
 .project-list {
   display: flex;
  flex-direction: column;
@@ -129,21 +161,40 @@ section h2 {
   gap: 25px;
   padding: 25px;
   border-bottom: 1px solid #ddd;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform .3s ease;
 }
 
 .project-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0,12);
+ background: #fafafa;
+}
+
+.project-card:last-child {
+  border-bottom:none;
 }
 
 .project-card img {
-  width: 90px;
-  height: 90px;
+  width: 120px;
+  height: 120px;
   object-fit: cover;
   border-radius: 12px;
   border: 1px solid black;
+}
+
+.project-info {
+  text-align: left;
+}
+
+.project-info h3 {
+  margin: 0 0 10px;
+  font-size: 32px;
+  color: #0f172a;
+}
+
+.project-info p {
+  color: #64748b;
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.6;
 }
 
 .project-card h3 {
@@ -164,18 +215,19 @@ section h2 {
 
 @media (max-width: 768px) {
   .app {
-    padding: 20px;
+    padding: 15px;
   }
 
   .header h1{
-    font-size: 2rem;
+    font-size: 40px;
   }
 
   .project-form {
-    padding: 20px;
+    padding: 25px;
   }
 
-  .project-list {
-    grid-template-columns: 1fr;
+  .project-card {
+    flex-direction:column;
+    align-items:flex-start;
   }
 }

@@ -42,22 +42,22 @@ function App() {
     };
 
     return (
-        <div className="app">
+      <div className="app">
         <Header />
 
-        <ProjectForm addProject={addProject} />
+        <div className="content">
+          <ProjectForm addProject={addProject} />
 
-        <SearchBar 
-        searchTerm={searchTerm}
-        setSearchTerm={setSearchTerm}
-         />
+          <div className="projects-container">
+            <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
 
-        <ProjectList 
-        projects={projects}
-        searchTerm={searchTerm}
-        />
+            <ProjectList projects={projects} searchTerm={searchTerm} />
+
+          </div>
 
         </div>
+        
+      </div>
     );
 }
 
