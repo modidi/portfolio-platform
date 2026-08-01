@@ -31,11 +31,11 @@ function App() {
     const [searchTerm, setSearchTerm] = useState("");
 
     const addProject = (newProject) => {
-        setProjects([
-            ...projects,
+        setProjects((prevProjects) => [
+            ...prevProjects,
             {
                 ...newProject,
-                id: projects.length + 1,
+                id: prevProjects.length + 1,
             },
         ]);
     };

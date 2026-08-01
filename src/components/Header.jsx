@@ -1,11 +1,18 @@
 function Header() {
 
     return (
-        <header>
-            <h1>Project Portfolio</h1>
-            <p>Explore our featured projects and discover the creativity behind every design.</p>
-        </header>
+      <header className="header">
 
+        <div className="container">
+          <h1>Portfolio Platform</h1>
+          <p>
+            Explore our featured projects and discover the creative solutions
+            built with modern web technologies.
+          </p>
+
+        </div>
+
+      </header>
     );
 }
 

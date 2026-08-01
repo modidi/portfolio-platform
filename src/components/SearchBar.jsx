@@ -1,13 +1,15 @@
 function SearchBar({searchTerm, setSearchTerm}) {
     return (
-        <section>
-            <input 
+      <section>
+        <div className="search-bar">
+          <input
             type="text"
             placeholder="Search projects..."
             value={searchTerm}
             onChange={(event) => setSearchTerm(event.target.value)}
-            />
-        </section>
+          />
+        </div>
+      </section>
     );
 }
 

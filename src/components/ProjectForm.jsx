@@ -10,9 +10,9 @@ function ProjectForm({addProject}) {
         event.preventDefault();
 
         const newProject = {
-            title,
-            description,
-            image,
+            title: title.trim(),
+            description: description.trim(),
+            image: image.trim(),
         };
 
         addProject(newProject);
@@ -23,36 +23,37 @@ function ProjectForm({addProject}) {
     };
 
     return (
-        <section>
-            <h2>Add New Project</h2>
+      <section>
+        <form className="project-form" onSubmit={handleSubmit}>
+          <h2>Add a New Project</h2>
 
-            <form onSubmit={handleSubmit}>
-                <input 
-                type="text"
-                placeholder="Project Title"
-                value={title}
-                onChange={(event) => setTitle(event.target.value)}
-                />
+          <div className="project-form-fields">
+            <input
+              type="text"
+              value={title}
+              onChange={(event) => setTitle(event.target.value)}
+              placeholder="Project Title"
+              required
+            />
 
-                <input
-                type="text"
-                placeholder="Project Description"
-                value={description}
-                onChange={(event) => setDescription(event.target.value)}
-                />
+            <textarea
+              placeholder="Project Description"
+              value={description}
+              onChange={(event) => setDescription(event.target.value)}
+              required
+            />
 
-                <input
-                type="text"
-                placeholder="Image URL"
-                value={image}
-                onChange={(event) => setImage(event.target.value)}
-                />
+            <input
+              type="url"
+              placeholder="Image URL"
+              value={image}
+              onChange={(event) => setImage(event.target.value)}
+            />
+          </div>
 
-                <button type="submit">
-                    Add Project
-                </button>
-            </form>
-        </section>
+          <button type="submit" className="project-form-submit">Add Project</button>
+        </form>
+      </section>
     );
 }
 
