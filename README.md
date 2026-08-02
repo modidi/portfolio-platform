@@ -1,16 +1,160 @@
-# React + Vite
+# Portfolio Platform (React SPA)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive Single Page Application (SPA) built with React that showcases projects in a modern portfolio. Users can browse projects, search through them, and dynamically add new ones without refreshing the page.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- View a portfolio of projects
+- Add new projects dynamically
+- Search projects in real time
+- Responsive design for desktop and mobile devices
+- Image placeholder for projects without an image URL
+- Click project images to view them in a larger modal
+- Success message displayed when a project is added
+- Smooth hover effects and animations
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Technologies Used
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React
+- JavaScript (ES6+)
+- CSS3
+- Vite
+
+---
+
+## Project Structure
+
+```
+src/
+│
+├── assets/
+│   ├── ecommerce.jpg
+│   ├── task.jpg
+│   ├── recipe.jpg
+│   └── placeholder.jpg
+│
+├── components/
+│   ├── Header.jsx
+│   ├── ProjectCard.jsx
+│   ├── ProjectForm.jsx
+│   ├── ProjectList.jsx
+│   └── SearchBar.jsx
+│
+├── App.jsx
+├── App.css
+└── main.jsx
+```
+
+---
+
+## Installation
+
+Clone the repository.
+
+```bash
+git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY.git
+```
+
+Navigate into the project folder.
+
+```bash
+cd YOUR-REPOSITORY
+```
+
+Install dependencies.
+
+```bash
+npm install
+```
+
+Start the development server.
+
+```bash
+npm run dev
+```
+
+Open the application in your browser using the URL provided by Vite (usually http://localhost:5173).
+
+---
+
+## How to Use
+
+### View Projects
+
+The homepage displays a list of available projects.
+
+### Search Projects
+
+Use the search bar to filter projects by title. Results update instantly as you type.
+
+### Add a Project
+
+Complete the form by entering:
+
+- Project title
+- Description
+- Optional image URL
+
+Click **Add Project** to add it to the portfolio.
+
+If no image URL is provided, a default placeholder image is displayed automatically.
+
+### View Larger Images
+
+Click any project image to open it in a larger modal.
+
+Click outside the image to close the modal.
+
+---
+
+## Responsive Design
+
+The application adapts to different screen sizes by:
+
+- Stacking project cards vertically on smaller devices
+- Scaling images appropriately
+- Making the search bar responsive
+- Adjusting spacing and typography for mobile viewing
+
+---
+
+## Future Improvements
+
+Possible enhancements include:
+
+- Edit existing projects
+- Delete projects
+- Save projects using Local Storage
+- Filter projects by category
+- Dark mode
+- Project detail page using React Router
+
+---
+
+## Screenshots
+
+### Home Page
+
+![Home Page](assets/homepage.png)
+
+### Add Project Form
+
+![Add Project](assets/addproject.png)
+
+### Image Modal
+
+![Image Modal](assets/imagemodal.png)
+
+---
+
+## Author
+
+**Maureen Mutua**
+
+Bachelor of Science in Information Technology
+
+GitHub: https://github.com/YOUR-USERNAME
