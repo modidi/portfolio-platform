@@ -93,7 +93,7 @@ The homepage displays a list of available projects.
 
 ### Search Projects
 
-Use the search bar to filter projects by title. Results update instantly as you type.
+Use the search bar to filter projects by title or tags. Results update instantly as you type.
 
 ### Add a Project
 
