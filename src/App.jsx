@@ -15,6 +15,7 @@ function App() {
         title: "E-Commerce Store",
         description: "An online shopping platform built with React.",
         image: ecommerce,
+        tags: ["React", "Shopping", "E-Commerce"],
       },
 
       {
@@ -22,6 +23,7 @@ function App() {
         title: "Task Manager",
         description: "A productivity app for organizing daily tasks.",
         image: task,
+        tags: ["Productivity", "React", "Tasks"],
       },
 
       {
@@ -29,6 +31,7 @@ function App() {
         title: "Recipe Finder",
         description: "A web application for searching recipes by ingredient or meal name.",
         image: recipeFinder,
+        tags: ["Food", "Recipes", "API"],
       },
     ]);
 

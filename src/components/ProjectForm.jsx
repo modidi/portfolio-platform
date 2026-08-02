@@ -13,6 +13,7 @@ function ProjectForm({addProject}) {
             title: title.trim(),
             description: description.trim(),
             image: image.trim(),
+            tags: [],
         };
 
         addProject(newProject);

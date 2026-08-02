@@ -17,6 +17,14 @@ function ProjectCard({ project, setSelectedImage }) {
           <p>{project.description}</p>
         </div>
 
+        <div className="project-tags">
+            {project.tags.map((tag) => (
+                <span key={tag} className="tag">
+                    {tag}
+                </span>
+            ))}
+        </div>
+
       </article>
     );
 }

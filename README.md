@@ -20,8 +20,8 @@ A responsive Single Page Application (SPA) built with React that showcases proje
 ## Technologies Used
 
 - React
-- JavaScript (ES6+)
-- CSS3
+- JavaScript 
+- CSS
 - Vite
 
 ---
@@ -56,13 +56,17 @@ src/
 Clone the repository.
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY.git
+git clone git@github.com:modidi/portfolio-platform.git
+```
+
+```bash
+npm create vite@latest portfolio-platform -- --template react
 ```
 
 Navigate into the project folder.
 
 ```bash
-cd YOUR-REPOSITORY
+cd portfolio-platform
 ```
 
 Install dependencies.
@@ -114,32 +118,14 @@ Click outside the image to close the modal.
 ## Responsive Design
 
 The application adapts to different screen sizes by:
-
 - Stacking project cards vertically on smaller devices
-- Scaling images appropriately
-- Making the search bar responsive
-- Adjusting spacing and typography for mobile viewing
-
----
-
-## Future Improvements
-
-Possible enhancements include:
-
-- Edit existing projects
-- Delete projects
-- Save projects using Local Storage
-- Filter projects by category
-- Dark mode
-- Project detail page using React Router
+- Resizing images appropriately.
+- Making the search bar and form input responsive.
+- Providing a consistent user experience on desktop, tablet and mobile devices.
 
 ---
 
 ## Screenshots
-
-### Home Page
-
-![Home Page](assets/homepage.png)
 
 ### Add Project Form
 
@@ -155,6 +141,4 @@ Possible enhancements include:
 
 **Maureen Mutua**
 
-Bachelor of Science in Information Technology
-
-GitHub: https://github.com/YOUR-USERNAME
+GitHub: https://github.com/modidi

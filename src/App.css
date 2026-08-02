@@ -18,6 +18,8 @@ body {
 
 .header h1 {
   font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: -1px;
   margin-bottom: 10px;
   color: #0f172a;
 }
@@ -33,7 +35,7 @@ body {
 .content {
   display: flex;
   flex-direction: column;
-  gap: 45px;
+  gap: 50px;
 }
 
 .project-form {
@@ -44,6 +46,7 @@ body {
   border-radius: 20px;
   padding: 40px;
   box-sizing: border-box;
+  box-shadow: 0 4px 2px rgba(15, 23, 42, 0.06);
 
 }
 
@@ -51,8 +54,9 @@ body {
   text-align: center;
   margin-bottom: 25px;
   color: #0f172a;
-  font-size: 2rem;
-  font-weight: bold;
+  font-size: 2rem;;
+  font-weight: 700;
+  letter-spacing: -0.5px
 }
 
 .project-form-fields {
@@ -64,19 +68,23 @@ body {
 .project-form label {
   text-align: left;
   font-weight: 600;
-  font-size: 18px;
+  font-size: 15px;
+  letter-spacing: 0.4px;
+  color: #334155;
 }
 
 .project-form input, 
 .project-form textarea {
   width: 100%;
   padding: 15px;
-  border: 1px solid #bfc8d6;
-  background: white;
+  border: 1px solid #dde3ec;
+  border-radius: 10px;
+  background: #fbfcfe;
   color: #1e293b;
   font-size: 1rem;
   box-sizing: border-box;
   outline: none;
+  transition: 0.2s ease;
 }
 
 .project-form textarea {
@@ -92,6 +100,7 @@ body {
 .project-form input:focus, 
 .project-form textarea:focus {
   border-color: #aa3bff;
+  background: white;
   box-shadow: 0 0 0 3px rgba(170, 59,255, 0.15);
 }
 
@@ -106,6 +115,7 @@ body {
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
+  box-shadow: 0 6px 18px rgba(170, 59, 255, 0.3);
   transition: 0.3s ease;
 }
 
@@ -113,6 +123,7 @@ body {
 .project-form-submit:hover {
   background: #8b2bcc;
   transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(170, 59, 255, 0.4);
 }
 
 .success-message {
@@ -145,6 +156,7 @@ body {
   border: 2px solid #1e293b;
   border-radius: 20px;
   overflow: hidden;
+  box-shadow: 0 4px 2px rgba(15,23, 42, 0.06);
 }
 
 .project-section h2 {
@@ -166,7 +178,9 @@ body {
   text-align: center;
   color: #0f172a;
   font-size: 2rem;
-  font-weight: bold;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+
 }
 
 .search-bar label {
@@ -262,6 +276,22 @@ body {
 .project-list + p {
   text-align: center;
   color: #64748b;
+}
+
+.project-tags {
+  margin-top: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag {
+  background: #ede9fe;
+  color: #6d28d9;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
 }
 
 

@@ -1,8 +1,12 @@
 import ProjectCard from "./ProjectCard";
 
 function ProjectList({ projects, searchTerm, setSelectedImage }) {
+
     const filteredProjects = projects.filter((project) =>
-    project.title.toLowerCase().includes(searchTerm.toLowerCase())
+    project.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
+    project.tags.some((tag) => 
+    tag.toLowerCase().includes(searchTerm.toLowerCase())
+      )
     );
 
     if(filteredProjects.length === 0) {
