@@ -36,39 +36,6 @@ body {
   gap: 45px;
 }
 
-.search-bar {
-  padding: 25px;
-  border-bottom: 1px solid #ececec;
-}
-
-.search-bar label {
-  display:block;
-  font-weight: 600;
-  margin-bottom: 12px;
-  color: #0f172a;
-}
-
-.search-bar input {
-  width: 800px;
-  padding: 14px 18px;
-  border: 1px solid #cbd5e1;
-  border-radius: 10px;
-  font-size: 1rem;
-  color: black;
-  outline: none;
-  background: white;
-  transition: 0.3s ease;
-}
-
-.search-bar input:focus {
-  border-color: #ae3bff;
-  box-shadow: 0 0 0 3px rgba(170, 59, 255, 0.15);
-}
-
-.search-bar input::placeholder {
-  color: #94a3b8;
-}
-
 .project-form {
   width: 100%;
   margin-bottom: 40px;
@@ -98,7 +65,8 @@ body {
   font-size: 18px;
 }
 
-.project-form input, .project-form textarea {
+.project-form input, 
+.project-form textarea {
   width: 100%;
   padding: 15px;
   border: 1px solid #bfc8d6;
@@ -114,11 +82,13 @@ body {
   resize: none;
 }
 
-.project-form input::placeholder, .project-form textarea::placeholder {
+.project-form input::placeholder, 
+.project-form textarea::placeholder {
   color: #94a3b8;
 }
 
-.project-form input:focus, .project-form textarea:focus {
+.project-form input:focus, 
+.project-form textarea:focus {
   border-color: #aa3bff;
   box-shadow: 0 0 0 3px rgba(170, 59,255, 0.15);
 }
@@ -137,12 +107,15 @@ body {
   transition: 0.3s ease;
 }
 
+
 .project-form-submit:hover {
   background: #8b2bcc;
   transform: translateY(-2px);
 }
 
-.sucess-message {
+
+
+.success-message {
   background: #dcfce7;
   color: #166534;
   border: 1px solid #86efac;
@@ -151,7 +124,7 @@ body {
   margin-bottom: 25px;
   text-align: center;
   font-weight: 600;
-  animation: fadeIn 0,3s ease;
+  animation: fadeIn 0.3s ease;
 }
 
 @keyframes fadeIn {
@@ -174,11 +147,6 @@ body {
   overflow: hidden;
 }
 
-.project-list {
-  display: flex;
- flex-direction: column;
-}
-
 .project-section h2 {
   padding: 25px 30px 0;
   color: #0f172a;
@@ -187,36 +155,62 @@ body {
   font-size: 1.8rem;
 }
 
+.search-bar {
+  padding: 25px;
+  border-bottom: 1px solid #ececec;
+}
+
+.search-bar label {
+  display:block;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #0f172a;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 14px 18px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  font-size: 1rem;
+  color: black;
+  outline: none;
+  background: white;
+  transition: 0.3s ease;
+}
+
+.search-bar input::placeholder {
+  color: #94a3b8;
+}
+
+.search-bar input:focus {
+  border-color: #ae3bff;
+  box-shadow: 0 0 0 3px rgba(170, 59, 255, 0.15);
+}
+
+.project-list {
+  display: flex;
+  flex-direction: column;
+}
+
 .project-card {
   display: flex;
   align-items: center;
   gap: 30px;
   padding: 30px;
   border-bottom: 1px solid #e5e7eb;
+  transition: .3s ease;
   animation: slideUp .5s ease;
-  /* box-shadow: 0 4px 12px rgba(0, 0, 0, .05); */
-  transition: all .3s ease;
 }
 
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.project-card:last-child {
+  border-bottom:none;
 }
 
 .project-card:hover {
  background: #f8fafc;
  transform: translateY(-2px);
  box-shadow: 0 10px 25px rgba(0, 0, 0, .08);
-}
-
-.project-card:last-child {
-  border-bottom:none;
 }
 
 .project-card img {
@@ -252,20 +246,21 @@ body {
   line-height: 1.6;
 }
 
-.project-card h3 {
-  margin-top: 18px;
-  margin-bottom: 10px;
-  color: #0f172a;
-}
-
-.project-card p {
-  color: #64748b;
-  line-height: 1.6;
-}
-
 .project-list + p {
   text-align: center;
   color: #64748b;
+}
+
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .image-modal {
@@ -300,12 +295,13 @@ body {
   }
 }
 @media (max-width: 768px) {
+
   .app {
     padding: 15px;
   }
 
   .header h1{
-    font-size: 40px;
+    font-size: 2.3rem;
   }
 
   .project-form {
@@ -314,6 +310,20 @@ body {
 
   .project-card {
     flex-direction:column;
-    align-items:flex-start;
+    align-items:center;
+    text-align: center;
+  }
+
+  .project-card img {
+    width: 100%;
+    height: 220px;
+  }
+
+  .project-info {
+    text-align: center;
+  }
+
+  .search-bar input {
+    width: 100%;
   }
 }

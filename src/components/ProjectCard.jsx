@@ -4,7 +4,7 @@ function ProjectCard({ project, setSelectedImage }) {
     return (
       <article className="project-card">
         <img
-          src={project.image || "https://via.placeholder.com/300"}
+          src={project.image || placeholder}
           alt={project.title}
           onClick={() => setSelectedImage(project.image || placeholder)}
           onError={(event) => {

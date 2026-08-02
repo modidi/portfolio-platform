@@ -33,7 +33,7 @@ function App() {
     ]);
 
     const [searchTerm, setSearchTerm] = useState("");
-    const [sucessMessage, setSuccessMessage] = useState("");
+    const [successMessage, setSuccessMessage] = useState("");
     const [selectedImage, setSelectedImage] = useState(null);
 
     const addProject = (newProject) => {
@@ -57,41 +57,40 @@ function App() {
         <Header />
 
         <div className="content">
-            {selectedImage && (
-                <div
-                className="image-modal"
-                onClick={() => setSelectedImage(null)}
-                >
-                    <img src={selectedImage}
-                    alt="Selected Project"
-                    className="modal-image"
-                    onClick={(event) => event.stopPropagation()} 
-                    />
-                    </div>
-            )}
-            
-          <ProjectForm addProject={addProject} />
-
-          {sucessMessage && (
-            <p className="sucess-message">
-                {sucessMessage}
-            </p>
+          {selectedImage && (
+            <div className="image-modal" onClick={() => setSelectedImage(null)}>
+              <img
+                src={selectedImage}
+                alt="Selected Project"
+                className="modal-image"
+                onClick={(event) => event.stopPropagation()}
+              />
+            </div>
           )}
 
+          <ProjectForm addProject={addProject} />
+
+          {successMessage && <p className="success-message">{successMessage}</p>}
+
           <div className="projects-container">
-            <SearchBar 
-            searchTerm={searchTerm} 
-            setSearchTerm={setSearchTerm} />
 
-            <ProjectList 
-            projects={projects} 
-            searchTerm={searchTerm}
-            setSelectedImage={selectedImage} />
+            <div className="search-bar">
 
+              <h2>Search Projects</h2>
+
+              <SearchBar
+                searchTerm={searchTerm}
+                setSearchTerm={setSearchTerm}
+              />
+            </div>
+
+            <ProjectList
+              projects={projects}
+              searchTerm={searchTerm}
+              setSelectedImage={setSelectedImage}
+            />
           </div>
-
         </div>
-
       </div>
     );
 }
