@@ -7,6 +7,7 @@ function ProjectCard({ project, setSelectedImage }) {
           src={project.image || placeholder}
           alt={project.title}
           onClick={() => setSelectedImage(project.image || placeholder)}
+          // Falls back to placeholder if the provided image URL fails to load
           onError={(event) => {
             event.target.src = placeholder;
           }}
@@ -18,13 +19,12 @@ function ProjectCard({ project, setSelectedImage }) {
         </div>
 
         <div className="project-tags">
-            {project.tags.map((tag) => (
-                <span key={tag} className="tag">
-                    {tag}
-                </span>
-            ))}
+          {project.tags.map((tag) => (
+            <span key={tag} className="tag">
+              {tag}
+            </span>
+          ))}
         </div>
-
       </article>
     );
 }

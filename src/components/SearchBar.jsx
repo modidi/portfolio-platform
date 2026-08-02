@@ -1,14 +1,14 @@
 function SearchBar({searchTerm, setSearchTerm}) {
     return (
       <section>
-
-          <input
-            type="text"
-            placeholder="Search projects by title or tags..."
-            value={searchTerm}
-            onChange={(event) => setSearchTerm(event.target.value)}
-          />
         
+        {/* Update the displayed projects as the user types. */}
+        <input
+          type="text"
+          placeholder="Search projects by title or tags..."
+          value={searchTerm}
+          onChange={(event) => setSearchTerm(event.target.value)}
+        />
       </section>
     );
 }

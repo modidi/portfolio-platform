@@ -1,68 +1,69 @@
 import { useState } from "react";
 
 function ProjectForm({addProject}) {
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [image, setImage] = useState("");
 
-    const [title,setTitle] = useState("");
-    const [description,setDescription] = useState("");
-    const[image,setImage] = useState("");
+  // Create a new project from the form input and clear the form after submission.
+  const handleSubmit = (event) => {
+    event.preventDefault();
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-
-        const newProject = {
-            title: title.trim(),
-            description: description.trim(),
-            image: image.trim(),
-            tags: [],
-        };
-
-        addProject(newProject);
-
-        setTitle("");
-        setDescription("");
-        setImage("");
+    const newProject = {
+      title: title.trim(),
+      description: description.trim(),
+      image: image.trim(),
+      tags: [title.trim()],
     };
 
-    return (
-      <section>
-        <form className="project-form" onSubmit={handleSubmit}>
-          <h2>Add a New Project</h2>
+    addProject(newProject);
 
-          <div className="project-form-fields">
+    setTitle("");
+    setDescription("");
+    setImage("");
+  };
 
-            <label htmlFor="title">Title</label>
-            <input
-              id="title"
-              type="text"
-              value={title}
-              onChange={(event) => setTitle(event.target.value)}
-              placeholder="Project title"
-              required
-            />
-            
-            <label htmlFor="description">Description</label>
-            <textarea
-              id="description"
-              placeholder="Project description"
-              value={description}
-              onChange={(event) => setDescription(event.target.value)}
-              required
-            />
+  return (
+    <section>
+      <form className="project-form" onSubmit={handleSubmit}>
+        <h2>Add a New Project</h2>
 
-            <label htmlFor="image">Image</label>
-            <input
-              id="image"
-              type="url"
-              placeholder="Image URL (optional)"
-              value={image}
-              onChange={(event) => setImage(event.target.value)}
-            />
-          </div>
+        <div className="project-form-fields">
+          <label htmlFor="title">Title</label>
+          <input
+            id="title"
+            type="text"
+            value={title}
+            onChange={(event) => setTitle(event.target.value)}
+            placeholder="Project title"
+            required
+          />
 
-          <button type="submit" className="project-form-submit">Add Project</button>
-        </form>
-      </section>
-    );
+          <label htmlFor="description">Description</label>
+          <textarea
+            id="description"
+            placeholder="Project description"
+            value={description}
+            onChange={(event) => setDescription(event.target.value)}
+            required
+          />
+
+          <label htmlFor="image">Image</label>
+          <input
+            id="image"
+            type="url"
+            placeholder="Image URL (optional)"
+            value={image}
+            onChange={(event) => setImage(event.target.value)}
+          />
+        </div>
+
+        <button type="submit" className="project-form-submit">
+          Add Project
+        </button>
+      </form>
+    </section>
+  );
 }
 
 export default ProjectForm;
