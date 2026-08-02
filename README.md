@@ -131,9 +131,9 @@ The application adapts to different screen sizes by:
 
 ![Add Project](assets/addproject.png)
 
-### Image Modal
+### Search Projects
 
-![Image Modal](assets/imagemodal.png)
+![Search Projects](assets/searchprojects.png)
 
 ---
 
