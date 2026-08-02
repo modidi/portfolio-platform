@@ -51,6 +51,8 @@ body {
   text-align: center;
   margin-bottom: 25px;
   color: #0f172a;
+  font-size: 2rem;
+  font-weight: bold;
 }
 
 .project-form-fields {
@@ -113,8 +115,6 @@ body {
   transform: translateY(-2px);
 }
 
-
-
 .success-message {
   background: #dcfce7;
   color: #166534;
@@ -156,8 +156,17 @@ body {
 }
 
 .search-bar {
-  padding: 25px;
+  padding: 30px;
   border-bottom: 1px solid #ececec;
+  text-align: center;
+}
+
+.search-bar h2 {
+  margin: 0 0 20px;
+  text-align: center;
+  color: #0f172a;
+  font-size: 2rem;
+  font-weight: bold;
 }
 
 .search-bar label {
@@ -168,14 +177,18 @@ body {
 }
 
 .search-bar input {
+  display: block;
   width: 100%;
-  padding: 14px 18px;
+  max-width: 800px;
+  margin:auto;
+  padding: 16px 20px;
   border: 1px solid #cbd5e1;
-  border-radius: 10px;
-  font-size: 1rem;
+  border-radius: 12px;
+  font-size: 1.1rem;
   color: black;
   outline: none;
   background: white;
+  box-sizing: border-box;
   transition: 0.3s ease;
 }
 
