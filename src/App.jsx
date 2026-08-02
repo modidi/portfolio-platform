@@ -9,93 +9,90 @@ import task from "./assets/task.jpg";
 import recipeFinder from "./assets/recipe.jpg";
 
 function App() {
-    const [projects, setProjects] = useState([
-      {
-        id: 1,
-        title: "E-Commerce Store",
-        description: "An online shopping platform built with React.",
-        image: ecommerce,
-        tags: ["React", "Shopping", "E-Commerce"],
-      },
+  const [projects, setProjects] = useState([
+    {
+      id: 1,
+      title: "E-Commerce Store",
+      description: "An online shopping platform built with React.",
+      image: ecommerce,
+      tags: ["React", "Shopping", "E-Commerce"],
+    },
 
-      {
-        id: 2,
-        title: "Task Manager",
-        description: "A productivity app for organizing daily tasks.",
-        image: task,
-        tags: ["Productivity", "React", "Tasks"],
-      },
+    {
+      id: 2,
+      title: "Task Manager",
+      description: "A productivity app for organizing daily tasks.",
+      image: task,
+      tags: ["Productivity", "React", "Tasks"],
+    },
 
+    {
+      id: 3,
+      title: "Recipe Finder",
+      description:
+        "A web application for searching recipes by ingredient or meal name.",
+      image: recipeFinder,
+      tags: ["Food", "Recipes", "API"],
+    },
+  ]);
+
+  const [searchTerm, setSearchTerm] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  // Adds a new project and displays a temporary success message.
+  const addProject = (newProject) => {
+    setProjects((prevProjects) => [
+      ...prevProjects,
       {
-        id: 3,
-        title: "Recipe Finder",
-        description: "A web application for searching recipes by ingredient or meal name.",
-        image: recipeFinder,
-        tags: ["Food", "Recipes", "API"],
+        ...newProject,
+        id: prevProjects.length + 1,
       },
     ]);
 
-    const [searchTerm, setSearchTerm] = useState("");
-    const [successMessage, setSuccessMessage] = useState("");
-    const [selectedImage, setSelectedImage] = useState(null);
+    setSuccessMessage(" ✅Project added successfully!");
 
-    const addProject = (newProject) => {
-        setProjects((prevProjects) => [
-            ...prevProjects,
-            {
-                ...newProject,
-                id: prevProjects.length + 1,
-            },
-        ]);
+    setTimeout(() => {
+      setSuccessMessage("");
+    }, 3000);
+  };
 
-        setSuccessMessage(" ✅Project added successfully!");
+  return (
+    <div className="app">
+      <Header />
 
-        setTimeout(() => {
-            setSuccessMessage("");
-        }, 3000);
-    };
-
-    return (
-      <div className="app">
-        <Header />
-
-        <div className="content">
-          {selectedImage && (
-            <div className="image-modal" onClick={() => setSelectedImage(null)}>
-              <img
-                src={selectedImage}
-                alt="Selected Project"
-                className="modal-image"
-                onClick={(event) => event.stopPropagation()}
-              />
-            </div>
-          )}
-
-          <ProjectForm addProject={addProject} />
-
-          {successMessage && <p className="success-message">{successMessage}</p>}
-
-          <div className="projects-container">
-
-            <div className="search-bar">
-
-              <h2>Search Projects</h2>
-
-              <SearchBar
-                searchTerm={searchTerm}
-                setSearchTerm={setSearchTerm}
-              />
-            </div>
-
-            <ProjectList
-              projects={projects}
-              searchTerm={searchTerm}
-              setSelectedImage={setSelectedImage}
+      <div className="content">
+        {selectedImage && (
+          <div className="image-modal" onClick={() => setSelectedImage(null)}>
+            <img
+              src={selectedImage}
+              alt="Selected Project"
+              className="modal-image"
+              onClick={(event) => event.stopPropagation()}
             />
           </div>
+        )}
+
+        <ProjectForm addProject={addProject} />
+
+        {successMessage && <p className="success-message">{successMessage}</p>}
+
+        <div className="projects-container">
+          <div className="search-bar">
+            <h2>Search Projects</h2>
+
+            <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+          </div>
+
+          <ProjectList
+            projects={projects}
+            searchTerm={searchTerm}
+            setSelectedImage={setSelectedImage}
+          />
         </div>
       </div>
-    );
+    </div>
+  );
 }
 
 export default App;

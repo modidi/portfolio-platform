@@ -1,8 +1,8 @@
 function SearchBar({searchTerm, setSearchTerm}) {
     return (
-      <section>
         
-        {/* Update the displayed projects as the user types. */}
+      // Search input that filters projects by title or tags.
+      <section>
         <input
           type="text"
           placeholder="Search projects by title or tags..."
