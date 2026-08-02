@@ -129,11 +129,11 @@ The application adapts to different screen sizes by:
 
 ### Add Project Form
 
-![Add Project](assets/addproject.png)
+![Add Project](src/assets/addproject.png)
 
 ### Search Projects
 
-![Search Projects](assets/searchprojects.png)
+![Search Projects](src/assets/searchprojects.png)
 
 ---
 
